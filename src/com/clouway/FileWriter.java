@@ -10,13 +10,17 @@ public class FileWriter {
     public FileWriter() {
     }
 
-    public void createNewFile(Path path, LinesDataSource linesDataSource) throws IOException {
+    public void createNewFile(Path path, LinesDataSource linesDataSource) {
         List<String> lines = linesDataSource.getLines();
         if(Files.isDirectory(path)){
             path = path.resolve(lines.get(0)+".txt");
             new File(path.toString(), lines.get(0));
             lines.remove(0);
         }
-        Files.write(path,lines);
+        try {
+            Files.write(path,lines);
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to write in " + path + " due: " +  e.getMessage());
+        }
     }
 }
