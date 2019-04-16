@@ -3,7 +3,7 @@ package com.clouway;
 import java.util.Scanner;
 
 public class ConsoleReader {
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
     public ConsoleReader() {
     }
 
