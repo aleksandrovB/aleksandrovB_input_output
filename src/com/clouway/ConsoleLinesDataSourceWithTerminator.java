@@ -5,12 +5,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleLinesDataSourceWithTerminator implements LinesDataSource {
-    String terminationString;
+    private String terminationString;
 
     public ConsoleLinesDataSourceWithTerminator(String terminationString) {
         this.terminationString = terminationString;
     }
 
+    /**
+     * Scans lines from console and adds them in List until terminationString is submitted
+     * @return List of lines from console
+     */
     @Override
     public List<String> getLines() {
         Scanner scan = new Scanner(System.in);

@@ -10,6 +10,11 @@ public class FileWriter {
     public FileWriter() {
     }
 
+    /**
+     * Creates new file if given path is directory. Uses first line in data source to choose filename
+     * @param path directory where new file is being created
+     * @param linesDataSource list of strings which will be written in file
+     */
     public void createNewFile(Path path, LinesDataSource linesDataSource) {
         List<String> lines = linesDataSource.getLines();
         if(Files.isDirectory(path)){

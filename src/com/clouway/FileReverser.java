@@ -9,6 +9,11 @@ public class FileReverser {
     public FileReverser() {
     }
 
+    /**
+     * Reverses line order in given file
+     * @param path path of file being reversed
+     * @param linesDataSource lines contained in file as list of strings
+     */
     public void reverse(Path path, LinesDataSource linesDataSource){
         List<String> lines = linesDataSource.getLines();
         String tempLine;
