@@ -90,5 +90,14 @@ public class Main {
         }
 
 
+        DirectoryBrowser directoryBrowser = new DirectoryBrowser();
+
+        try {
+            System.out.println("Directory contains :"+directoryBrowser.listContent(textFileDir));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }

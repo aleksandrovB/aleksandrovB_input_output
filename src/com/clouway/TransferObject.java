@@ -32,6 +32,7 @@ public class TransferObject {
         for (int i = 0 ; i < howManyKBytes ; i++) {
             out.write(bytes,0,read);
             read = inp.read(bytes);
+            out.flush();
         }
         out.write(bytes,0,lastBytes);
     }
